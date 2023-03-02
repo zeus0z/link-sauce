@@ -30,14 +30,11 @@ function App() {
       <button className="authButtons" onClick={openLoginModal}> Login </button>
       <button className="authButtons" onClick={openSignUpModal}> Sign Up</button>
 
-      {isLoginModalVisible &&(
-
-        <LoginScreenModal>
-      )   }
+      {isLoginModalVisible &&(<LoginScreenModal closeModalFunction={closeLoginModal}>)}
 
 
-    </div>
-
+    
+      </div>
 
   );
 }
