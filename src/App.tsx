@@ -6,26 +6,12 @@ import { signOut } from 'firebase/auth';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
+//Bootstrap Imports
+import { Button } from 'react-bootstrap';
+
 function App() {
 
-  /*
-  const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false)
-  const [isLoginModalVisible, setIsLoginModalVisible] = useState(false)
-
-  const openSignUpModal = () => {
-    setIsSignUpModalVisible(true);
-  };
-  const closeSignUpModal = () => {
-    setIsSignUpModalVisible(false);
-  };
-  const openLoginModal = () => {
-    setIsLoginModalVisible(true);
-  };
-  const closeLoginModal = () => {
-    setIsLoginModalVisible(false);
-  };
-
-  */
+ 
 
   const logUser = () => {
     console.log(auth.currentUser?.uid)
@@ -41,35 +27,13 @@ function App() {
 
   return (
 
-    <div className='App bg-dark'>
+    <div className='App'>
 
-      <button className="btn btn-secondary" onClick={logUser}> USUARIO CONSOLE </button>
-
-
-      {!user && (
-
-        <>
-          <button className="btn btn-primary" onClick={openLoginModal}> Login </button>
-          <button className="btn btn-success" onClick={openSignUpModal}> Sign Up</button>
-        </>
-
-      )}
-
+    <Button onClick={logUser} variant='secondary'>Console.loguser</Button>
+    <Button onClick={logout} variant='secondary'>Log Out</Button>
      
-        <button className="btn btn-secondary" onClick={logout}> LOGOUT </button>
-      
-
-
-
-      {isLoginModalVisible && (
-        <LoginModal closeModalFunction={closeLoginModal} />)}
-
-      {isSignUpModalVisible && (
-        <SignUpModal closeModalFunction={closeSignUpModal} />)}
-
-
-
-
+     <LoginModal/>
+     <SignUpModal/>
 
     </div>
 
