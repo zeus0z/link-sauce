@@ -7,7 +7,7 @@ type Props = {
   closeModalFunction: ()=>void;
 }
 
-const LoginScreenModal = ({closeModalFunction}:Props) => {
+const LoginModal = ({closeModalFunction}:Props) => {
 
   const [LoginEmail, setLoginEmail] = useState<string>('');
   const [LoginPassword, setLoginPassword] = useState<string>('')
@@ -30,4 +30,4 @@ const LoginScreenModal = ({closeModalFunction}:Props) => {
   )
 }
 
-export default LoginScreenModal
+export default LoginModal

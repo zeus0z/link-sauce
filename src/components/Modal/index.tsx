@@ -1,8 +1,6 @@
-import './styles.css'
-
 type Props = {
     modalTitle: string;
-    closeModalFunction: ()=>void;
+    closeModalFunction: () => void;
     children: any;
 
 }
@@ -10,21 +8,26 @@ type Props = {
 const Modal = ({ modalTitle, closeModalFunction, children }: Props) => {
 
     return (
-        <div className="modal">
 
-            <div className="modalHeader">
-                <h2 className="modalTitle">{modalTitle}</h2>
-                <span className="closeButton"
-                    onClick={closeModalFunction}>
-                    &times;
-                </span>
+
+        <div className="modal" tabindex="-1">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title">{modalTitle}</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                        {children}
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
             </div>
-
-            <div className="modalContent">
-                {children}
-            </div>
-
         </div>
+
     )
 }
 
